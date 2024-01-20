@@ -1,0 +1,324 @@
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none; // Yeah, yeah everybody write about it
+}
+
+.basket__content {
+  display: flex;
+  flex-direction: row;
+  margin-top: 96px;
+  justify-content: space-between;
+  margin-top: 96px;
+  margin-bottom: 128px;
+
+  .basket__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 58%;
+  }
+
+  .basket__info {
+    @include flex3(column, 57px);
+    width: 32%;
+
+    .basket__form {
+      @include flex3(column, 20px);
+
+      .form__heading {
+        padding-top: 17px;
+        @include font(#222, 16px, 300);
+      }
+
+      .form__input {
+        height: 45px;
+        padding-left: 16px;
+        border: 1px solid #a4a4a4;
+        font-family: Lato;
+
+        .form__input::-webkit-input-placeholder {
+          @include font(#222, 13px, 300);
+        }
+      }
+
+      .form__button {
+        height: 35px;
+        width: 101px;
+        background-color: #fff;
+        border: 1px solid #a4a4a4;
+        @include font(#4a4a4a, 11px, 300);
+        font-family: Lato;
+      }
+
+      .form__button:hover {
+        background-color: $ColorSelection;
+        transition: background-color 0.4s;
+        color: #fff;
+        border: none;
+      }
+    }
+
+    .total {
+      display: flex;
+      flex-direction: column;
+      background-color: #f5f3f3;
+      padding: 39px 44px 42px 44px;
+
+      .total__subtitle {
+        margin-bottom: 12px;
+        @include font(#4a4a4a, 11px, 400);
+        margin-left: 174px;
+
+        .subtitle__price {
+          padding-left: 15px;
+        }
+      }
+
+      .total__title {
+        margin-bottom: 21px;
+        @include font(#222, 16px, 300);
+        margin-left: 109px;
+
+        .title__price {
+          @include font(#f16d7f, 16px, 700);
+          padding-left: 15px;
+        }
+      }
+
+      .total__line {
+        margin-bottom: 17px;
+      }
+
+      .total__button {
+        height: 50px;
+        background-color: #f16d7f;
+        @include font(#fff, 16px, 300);
+        border: none;
+        font-family: Lato;
+      }
+
+      .total__button:hover {
+        background-color: #fff;
+        transition: background-color 0.4s;
+        color: #4a4a4a;
+        border: 1px solid #4a4a4a;
+      }
+    }
+  }
+
+  .basket__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 32px;
+
+    .basket__button {
+      width: 225px;
+      height: 50px;
+      background-color: #fff;
+      border: 1px solid #a4a4a4;
+      @include font(#000, 14px, 300);
+      font-family: Lato;
+    }
+
+    .basket__button:hover {
+      background-color: $ColorSelection;
+      transition: background-color 0.4s;
+      color: #fff;
+      border: none;
+    }
+  }
+}
+
+.card__item {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 10px 15px 15px #eaeaea;
+
+  .card__description {
+    display: flex;
+    flex-direction: column;
+    margin: 22px 97px 62px 31px;
+    position: relative;
+
+    .card__heading {
+      @include font(#222, 24px, 400);
+      margin-bottom: 42px;
+      width: 262px;
+    }
+
+    .card__cross {
+      position: absolute;
+      left: 328px;
+      top: 7px;
+    }
+
+    .card__cross:hover {
+      transform: scale(1.5, 1.5);
+      transition: transform 0.4s;
+    }
+
+    .card__info {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+
+      .info__field {
+        @include font(#575757, 22px, 400);
+      }
+
+      .quantity__field {
+        @include flex3(row, 24px);
+        align-items: center;
+      }
+
+      .price__field {
+        @include font(#ef5b70, 22px, 400);
+      }
+
+      .desription__field {
+        @include font(#6f6e6e, 22px, 400);
+      }
+
+      .card__input {
+        width: 44px;
+        height: 24px;
+        text-align: center;
+        @include font(#656565, 18px, 400);
+        border: 1px solid #eaeaea;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .center {
+    padding-left: calc(50% - 368px);
+    padding-right: calc(50% - 368px);
+  }
+
+  .basket__content {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 59px;
+
+    .basket__cards {
+      width: unset;
+      margin-bottom: 64px;
+
+      .card__item {
+        .card__description {
+          margin: 22px 179px 62px 31px;
+
+          .card__cross {
+            left: 400px;
+          }
+        }
+      }
+
+      .basket__buttons {
+        justify-content: center;
+        margin-top: 22px;
+        gap: 48px;
+      }
+    }
+
+    .basket__info {
+      width: unset;
+      flex-direction: row;
+      gap: 15px;
+
+      .form__input {
+        width: 356px;
+      }
+
+      .total {
+        margin-top: 56px;
+      }
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .postheader__content {
+    justify-content: center;
+  }
+
+  .basket__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 39px;
+    margin-bottom: 96px;
+
+    .basket__cards {
+      width: unset;
+      gap: 30px;
+      margin-bottom: 48px;
+
+      .card__item {
+        img {
+          width: 40%;
+        }
+
+        .card__description {
+          margin: 13px 53px 38px 17px;
+          width: 60%;
+
+          .card__heading {
+            font-size: 16px;
+            margin-bottom: 25px;
+            width: unset;
+          }
+
+          .info__field {
+            font-size: 14px;
+
+            .price__field,
+            .desription__field {
+              font-size: 14px;
+            }
+
+            .quantity__field {
+              gap: 15px;
+            }
+
+            .card__input {
+              width: 24px;
+              height: 15px;
+              font-size: 10px;
+            }
+          }
+
+          .card__cross {
+            width: 9px;
+            height: 11px;
+            left: 170px;
+          }
+        }
+      }
+    }
+
+    .basket__buttons {
+      gap: 9px;
+      margin-top: 0;
+
+      .basket__button {
+        width: 175px;
+        height: 33px;
+        font-size: 12px;
+      }
+    }
+
+    .basket__info {
+      width: unset;
+      gap: 48px;
+
+      .basket__form {
+        .button__get {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

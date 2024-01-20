@@ -1,0 +1,34 @@
+@import "vars";
+
+@mixin font($color, $fontsize, $fontweight) {
+  color: $color;
+  font-size: $fontsize;
+  font-style: normal;
+  font-weight: $fontweight;
+  line-height: normal;
+}
+
+@mixin center($width) {
+  padding-left: calc(50% - $width);
+  padding-right: calc(50% - $width);
+}
+
+@mixin flex1($flex-direction, $align-items) {
+  display: flex;
+  flex-direction: $flex-direction;
+  align-items: $align-items;
+}
+
+@mixin flex2($flex-direction, $align-items, $justifycontent, $gap) {
+  display: flex;
+  flex-direction: $flex-direction;
+  align-items: $align-items;
+  justify-content: $justifycontent;
+  gap: $gap;
+}
+
+@mixin flex3($flex-direction, $gap) {
+  display: flex;
+  flex-direction: $flex-direction;
+  gap: $gap;
+}
